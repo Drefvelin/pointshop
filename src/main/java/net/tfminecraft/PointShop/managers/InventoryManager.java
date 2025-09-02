@@ -32,10 +32,7 @@ public class InventoryManager {
 		ItemStack i = t.getMenuItem();
 		ItemMeta meta = i.getItemMeta();
 		List<String> lore = new ArrayList<>();
-		if(meta.getLore().size() > 0) {
-			lore.addAll(meta.getLore());
-			lore.add("");
-		}
+		meta.setLore(t.getMenuItem().getItemMeta().getLore());
 		String cost = "§6"+t.getCost() +" "+ t.getType().getName();
 		if(t.getCost() > 1) cost = cost+"s";
 		lore.add("§eCost: "+cost);
